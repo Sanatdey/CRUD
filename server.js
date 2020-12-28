@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-// var confirm = require('confirm-dialog')
+const port = process.env.PORT || 3000;
 const connect = require("./config/db");
 
 connect();
@@ -128,7 +128,7 @@ app.use((req,res) => {
 
 // listen for requests
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is listening on port 3000");
 });
 
